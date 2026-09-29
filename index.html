@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World of Education — Resource Library</title>
+<style>
+  :root{
+    --navy:#0d2740;
+    --navy-light:#153a5c;
+    --saffron:#ff9933;
+    --green:#138808;
+    --bg:#f6f8fa;
+    --card:#ffffff;
+    --text:#1c2b3a;
+    --muted:#5c6b7a;
+    --border:#e2e8ef;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Segoe UI', Roboto, Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+  }
+
+  /* HEADER */
+  header{
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color:#fff;
+    padding:2.2rem 1.5rem 1.6rem;
+    text-align:center;
+    border-bottom:5px solid var(--saffron);
+    position:relative;
+  }
+  header .stripe{
+    height:4px;
+    background:linear-gradient(90deg, var(--saffron), #fff, var(--green));
+    width:100%;
+    position:absolute;
+    top:0; left:0;
+  }
+  header h1{
+    font-size:2.4rem;
+    letter-spacing:1px;
+  }
+  header p.tagline{
+    margin-top:0.5rem;
+    font-size:1.05rem;
+    color:#cfe0ef;
+    font-style:italic;
+  }
+  header .made-for{
+    margin-top:1rem;
+    display:inline-block;
+    background:rgba(255,255,255,0.12);
+    padding:0.4rem 1rem;
+    border-radius:30px;
+    font-size:0.9rem;
+    color:#fff;
+  }
+
+  /* NAV (quick jump) */
+  nav{
+    background:var(--navy);
+    padding:0.7rem 1rem;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:0.6rem;
+    position:sticky;
+    top:0;
+    z-index:10;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
+  }
+  nav a{
+    color:#e8f0f8;
+    text-decoration:none;
+    font-size:0.88rem;
+    padding:0.45rem 0.9rem;
+    border-radius:20px;
+    border:1px solid transparent;
+    transition:all 0.2s ease;
+  }
+  nav a:hover{
+    background:var(--saffron);
+    color:#1c2b3a;
+    border-color:var(--saffron);
+  }
+
+  /* MAIN LAYOUT */
+  main{
+    max-width:1000px;
+    margin:2.2rem auto;
+    padding:0 1.2rem;
+  }
+
+  section.category{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-left:5px solid var(--saffron);
+    border-radius:10px;
+    padding:1.5rem 1.8rem;
+    margin-bottom:1.8rem;
+    box-shadow:0 2px 8px rgba(13,39,64,0.05);
+    scroll-margin-top:70px;
+  }
+  section.category:nth-of-type(even){
+    border-left-color:var(--green);
+  }
+
+  section.category h2{
+    color:var(--navy);
+    font-size:1.4rem;
+    margin-bottom:0.3rem;
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+  }
+  section.category h2 .icon{
+    font-size:1.3rem;
+  }
+  section.category .desc{
+    color:var(--muted);
+    font-size:0.92rem;
+    margin-bottom:1rem;
+  }
+
+  ul.link-list{
+    list-style:none;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:0.7rem;
+  }
+  ul.link-list li a{
+    display:block;
+    background:#f2f6fa;
+    color:var(--navy);
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.95rem;
+    padding:0.7rem 1rem;
+    border-radius:8px;
+    border:1px solid var(--border);
+    transition:all 0.2s ease;
+  }
+  ul.link-list li a::before{
+    content:"→ ";
+    color:var(--saffron);
+    font-weight:700;
+  }
+  ul.link-list li a:hover{
+    background:var(--navy);
+    color:#fff;
+    transform:translateX(3px);
+    border-color:var(--navy);
+  }
+
+  /* SUBHEADING style for grouped blog sections */
+  h3.subheading{
+    color:var(--green);
+    font-size:1rem;
+    margin:1.1rem 0 0.5rem;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    border-bottom:1px dashed var(--border);
+    padding-bottom:0.3rem;
+  }
+
+  /* FOOTER */
+  footer{
+    background:var(--navy);
+    color:#dfe9f2;
+    text-align:center;
+    padding:1.8rem 1rem;
+    margin-top:3rem;
+  }
+  footer .names{
+    font-size:1.05rem;
+    font-weight:700;
+    color:#fff;
+    margin-bottom:0.4rem;
+  }
+  footer .names span{
+    color:var(--saffron);
+  }
+  footer p{
+    font-size:0.85rem;
+    color:#a9bdd0;
+  }
+  footer .stripe-bottom{
+    height:3px;
+    background:linear-gradient(90deg, var(--saffron), #fff, var(--green));
+    width:100%;
+    margin-top:1.5rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="stripe"></div>
+  <h1>🎓 World of Education</h1>
+  <p class="tagline">A curated library of trusted resources for education, policy & current affairs</p>
+  <div class="made-for">Powered by <strong>Smriti EduSar</strong></div>
+</header>
+
+<nav>
+  <a href="#official">Official Websites</a>
+  <a href="#youtube">YouTube Channels</a>
+  <a href="#currentaffairs">Current Affairs</a>
+  <a href="#blogs">Blogs</a>
+</nav>
+
+<main>
+
+  <section class="category" id="official">
+    <h2><span class="icon">🏛️</span> Official Government &amp; Education Websites</h2>
+    <p class="desc">Primary sources for policy, curriculum, and official announcements.</p>
+    <ul class="link-list">
+      <li><a href="https://www.education.gov.in/" target="_blank" rel="noopener">Education Ministry</a></li>
+      <li><a href="https://www.pib.gov.in/indexd.aspx?reg=48&lang=1" target="_blank" rel="noopener">PIB (Press Information Bureau)</a></li>
+      <li><a href="https://indianexpress.com/section/education/?ref=bun_section" target="_blank" rel="noopener">Indian Express — Education</a></li>
+      <li><a href="https://www.thehindu.com/education/" target="_blank" rel="noopener">The Hindu — Education</a></li>
+      <li><a href="https://www.ugc.gov.in/" target="_blank" rel="noopener">UGC</a></li>
+      <li><a href="https://ncert.nic.in/" target="_blank" rel="noopener">NCERT</a></li>
+      <li><a href="https://www.cbse.gov.in/" target="_blank" rel="noopener">CBSE</a></li>
+      <li><a href="https://pmevidya.education.gov.in/" target="_blank" rel="noopener">PM E-Vidya</a></li>
+      <li><a href="https://web.ncte.gov.in/en" target="_blank" rel="noopener">NCTE</a></li>
+    </ul>
+  </section>
+
+  <section class="category" id="youtube">
+    <h2><span class="icon">📺</span> YouTube Channels</h2>
+    <p class="desc">Video resources for parliamentary proceedings and NCERT content.</p>
+    <ul class="link-list">
+      <li><a href="http://www.youtube.com/@SansadTV" target="_blank" rel="noopener">Sansad TV</a></li>
+      <li><a href="http://www.youtube.com/@NCERTOFFICIAL" target="_blank" rel="noopener">NCERT Official</a></li>
+    </ul>
+  </section>
+
+  <section class="category" id="currentaffairs">
+    <h2><span class="icon">📰</span> General Current Affairs</h2>
+    <p class="desc">General reading for broader current affairs coverage.</p>
+    <ul class="link-list">
+      <li><a href="https://afeias.com/" target="_blank" rel="noopener">AFEIAS</a></li>
+    </ul>
+  </section>
+
+  <section class="category" id="blogs">
+    <h2><span class="icon">✍️</span> Blogs &amp; Policy Commentary</h2>
+    <p class="desc">In-depth blogs and substacks on education policy and public policy analysis.</p>
+
+    <h3 class="subheading">Education & Policy Focused</h3>
+    <ul class="link-list">
+      <li><a href="https://www.centralsquarefoundation.org/blogs-and-articles" target="_blank" rel="noopener">Central Square Foundation</a></li>
+      <li><a href="https://world-education-blog.org/" target="_blank" rel="noopener">UNESCO World Education Blog</a></li>
+      <li><a href="https://www.policycircle.org/" target="_blank" rel="noopener">Policy Circle</a></li>
+    </ul>
+
+    <h3 class="subheading">Independent Substacks</h3>
+    <ul class="link-list">
+      <li><a href="https://learnwithswasti.substack.com/" target="_blank" rel="noopener">Chalk And Policy</a></li>
+      <li><a href="https://www.thebackbench.in/" target="_blank" rel="noopener">Back Bench</a></li>
+      <li><a href="https://nalsarpublicpolicy.substack.com/" target="_blank" rel="noopener">NALSAR Public Policy</a></li>
+      <li><a href="https://thequantifiedindia.substack.com/" target="_blank" rel="noopener">The Quantified India</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="names">Curated for <span>VIPUL</span> &amp; <span>SMRITI</span></div>
+  <p>World of Education — Personal Resource Library</p>
+  <p>Built for focused, distraction-free learning &amp; exam preparation</p>
+  <div class="stripe-bottom"></div>
+</footer>
+
+</body>
+</html>
